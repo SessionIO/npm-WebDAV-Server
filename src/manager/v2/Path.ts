@@ -28,7 +28,12 @@ export class Path
 
     decode() : void
     {
-        this.paths = this.paths.map(decodeURIComponent);
+        // fix 引发 crash，被扫描 Path { paths: [ '%NETHOOD%' ] }
+        try {
+            this.paths = this.paths.map(decodeURIComponent);
+        } catch (e) {
+            console.log(e)
+        }
     }
 
     isRoot() : boolean
