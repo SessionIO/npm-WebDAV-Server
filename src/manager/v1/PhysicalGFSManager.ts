@@ -17,6 +17,7 @@ export class PhysicalGFSManager extends PhysicalFSManager
             dateCreation: resource.dateCreation,
             dateLastModified: resource.dateLastModified,
             properties: resource.properties,
+            // @ts-ignore
             customName: resource.customName
         };
     }

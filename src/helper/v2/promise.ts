@@ -3,6 +3,7 @@ export function promisifyCall<T>(call : (cb : (error ?: any, result ?: T) => voi
 export function promisifyCall<T>(call : (cb : (error ?: any) => void) => void) : Promise<void>
 export function promisifyCall<T>(call : (cb : (error ?: any, result ?: T) => void) => void) : Promise<T>
 {
+    // @ts-ignore
     return new Promise<any>((resolve, reject) => {
         call((e, result) => {
             if(e)
